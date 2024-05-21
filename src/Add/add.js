@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Button, Form } from 'react-bootstrap';
 
 function Add() {
     const [userData, setUserData] = useState({
@@ -41,27 +42,57 @@ function Add() {
     return (
         <div className="container">
             <h2>Add user</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" id="name" name="name" value={userData.name} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" value={userData.username} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="address">Address:</label>
-                    <input type="text" id="address" name="address" value={userData.address} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="phoneNumber">Phone Number:</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" value={userData.phoneNumber} onChange={handleChange} />
-                </div>
-                <div className="form-group">
-                    <button type="submit" className="btn btn-success">ADD</button>
-                </div>
-            </form>
+            <Form onSubmit={handleSubmit}>
+                <Form.Group>
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control 
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={userData.name}
+                        onChange={handleChange}
+                        required
+                    />
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control 
+                        type="text"
+                        id="username"
+                        name="username"
+                        value={userData.username}
+                        onChange={handleChange}
+                        required
+                    />
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control 
+                        type="text"
+                        id="address"
+                        name="address"
+                        value={userData.address}
+                        onChange={handleChange}
+                        required
+                    />
+                </Form.Group>
+
+                <Form.Group>
+                    <Form.Label>phoneNumber</Form.Label>
+                    <Form.Control 
+                        type="number"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        value={userData.phoneNumber}
+                        onChange={handleChange}
+                        required
+                    />
+                </Form.Group>
+                
+                <Button variant='warning' type='submit'>Save</Button>
+            </Form>
         </div>
     );
 }

@@ -72,7 +72,7 @@ function Edit() {
                 <Form.Group controlId="formPhoneNumber">
                     <Form.Label>Phone Number</Form.Label>
                     <Form.Control 
-                        type="text" 
+                        type="number" 
                         name="phoneNumber" 
                         value={user.phoneNumber}
                         onChange={handleChange} 
