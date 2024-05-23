@@ -11,7 +11,7 @@ function Edit() {
     useEffect(() => {
         const fetchUser = async () => {
             try {
-                const response = await axios.get(`http://localhost:55174/user/get_id/${id}`);
+                const response = await axios.get(`http://localhost:61089/user/get_id/${id}`);
                 setUser(response.data[0]); 
             } catch (error) {
                 console.error("Error fetching user data:", error);
@@ -28,7 +28,7 @@ function Edit() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:55174/user/edit/${id}`, user);
+            await axios.put(`http://localhost:61089/user/edit/${id}`, user);
             navigate('/');
         } catch (error) {
             console.error("Error updating user:", error);

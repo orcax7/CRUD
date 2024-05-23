@@ -24,7 +24,7 @@ function Add() {
         e.preventDefault();
         console.log(userData);
         try {
-            const response = await axios.post("http://localhost:55174/user/add", userData);
+            const response = await axios.post("http://localhost:61089/user/add", userData);
             console.log("User added:", response.data);
             setUserData({
             name: '', 
